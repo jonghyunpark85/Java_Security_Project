@@ -1,0 +1,8 @@
+grant codeBase "file:/root/assign1Data/*" {
+	permission java.io.FilePermission "/root/assign1Data/1.txt", "read,write";
+};
+
+grant codeBase "file:/root/assign1Data/*" {
+	permission java.io.FilePermission "/root/assign1Data/*.txt", "read, write, delete";
+};
+

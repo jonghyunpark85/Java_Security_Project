@@ -1,0 +1,4 @@
+
+
+java -cp .:Domain.jar -Djava.security.manager -Djava.security.policy=security.policy ManageComputers
+

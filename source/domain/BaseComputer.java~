@@ -1,0 +1,67 @@
+package domain;
+
+import java.io.Serializable;
+
+public class BaseComputer implements Serializable {
+
+	static final long serialVersionUID = 1L;
+
+	private String cpuType;
+	private int ramSize;
+	private int diskSize;
+
+	public BaseComputer getInstance(String cpuType, int ramSize, int diskSize) {
+		return new BaseComputer(cpuType, ramSize, diskSize);
+	}
+
+	BaseComputer(String cpuType, int ramSize, int diskSize) {
+		
+		if (cpuType==null || cpuType.length()==0)
+			throw new IllegalArgumentException("***ERROR : Missing CPU Type***");
+		
+		if (cpuType!="i5" || cpuType!="i7")
+			throw new IllegalArgumentException("***ERROR : Invaild CPU Type***");
+		
+		if (ramSize != 8 || ramSize != 16)
+			throw new IllegalArgumentException("***ERROR : Invaild Ram Size***");
+		
+		if (diskSize != 250 || diskSize != 500)
+			throw new IllegalArgumentException("***ERROR : Invaild Disk Size***");
+				
+		this.cpuType = cpuType;
+		this.ramSize = ramSize;
+		this.diskSize = diskSize;
+	}
+
+	public String getCpuType() {
+		return cpuType;
+	}
+
+	public void setCpuType(String cpuType) {
+		this.cpuType = cpuType;
+	}
+
+	public int getRamSize() {
+		return ramSize;
+	}
+
+	public void setRamSize(int ramSize) {
+		this.ramSize = ramSize;
+	}
+
+	public int getDiskSize() {
+		return diskSize;
+	}
+
+	public void setDiskSize(int diskSize) {
+		this.diskSize = diskSize;
+	}
+	
+	@Override
+	public String toString( ) {
+		return cpuType;
+		
+	}
+
+}
+
